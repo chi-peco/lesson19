@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JLPT N5 Japanese Lesson Guide — 19回目</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #111111; --gray: #666666; --lgray: #999999;
+  --border: #cccccc; --red: #cc0000; --bg: #f5f5f5; --white: #ffffff;
+  --yellow: #fffde7; --try-bg: #f0f7ff; --try-border: #90b8d8;
+  --g1: #fdf2e2; --g2: #eaf4fb; --g3: #f4eafb; --g1-sub: #fef8ef;
+  --g1-border: #e67e22; --g2-border: #2980b9; --g3-border: #8e44ad;
+}
+body { font-family: Arial, sans-serif; font-size: 15px; color: var(--black); background: var(--bg); padding-bottom: 60px; line-height: 1.6; }
+nav { position: sticky; top: 0; background: var(--white); border-bottom: 2px solid var(--black); padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 6px; z-index: 100; }
+nav a { font-size: 12px; color: var(--gray); text-decoration: none; padding: 3px 10px; border: 1px solid var(--border); border-radius: 3px; white-space: nowrap; }
+nav a:hover { background: var(--black); color: var(--white); }
+.page { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+.title-bar { background: var(--white); border-bottom: 3px solid var(--black); padding: 20px 20px 14px; }
+.title-bar h1 { font-size: 26px; font-weight: 900; }
+.title-bar h1 span { font-size: 18px; font-weight: 400; color: var(--gray); margin-left: 8px; }
+.title-bar .sub { font-size: 14px; color: var(--black); font-weight: 700; margin-top: 4px; }
+.title-bar .toc { font-size: 13px; color: var(--gray); margin-top: 4px; }
+.section { background: var(--white); border: 1px solid var(--border); border-radius: 4px; margin: 20px 0; overflow: hidden; }
+.section-header { border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); padding: 10px 20px; font-size: 17px; font-weight: 700; }
+.section-header .ja { font-size: 13px; color: var(--gray); font-weight: 400; margin-left: 8px; }
+.section-body { padding: 20px; }
+h2 { font-size: 16px; font-weight: 700; margin: 18px 0 8px; }
+h2 .ja { font-size: 12px; color: var(--gray); font-weight: 400; margin-left: 6px; }
+.intro-example { border-left: 3px solid var(--border); padding: 8px 14px; margin: 0 0 14px; background: transparent; }
+.intro-example .intro-label { font-size: 11px; font-weight: 700; color: var(--lgray); letter-spacing: 1px; margin-bottom: 6px; }
+.intro-example .intro-line { font-family: monospace; font-size: 14px; margin: 4px 0 2px; }
+.intro-example .intro-en { color: var(--lgray); font-size: 12px; font-style: italic; margin: 0 0 6px; }
+.logic-box { border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; margin: 12px 0; background: #fafafa; }
+.logic-box p { font-size: 14px; margin: 4px 0; }
+.logic-box .ja { color: var(--gray); font-size: 12px; margin: 2px 0 8px; }
+.structure { border: 1px solid var(--gray); font-family: monospace; font-size: 14px; padding: 10px 14px; margin: 10px 0; background: #fafafa; border-radius: 3px; }
+.structure div { margin: 2px 0; }
+.legend { font-size: 11px; color: var(--lgray); margin: -6px 0 10px 2px; font-style: italic; }
+.check-pair { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.check-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+.check-row + .check-row { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }
+.check-mark { font-size: 18px; font-weight: 700; flex-shrink: 0; }
+.check-mark.ok { color: var(--black); }
+.check-mark.ng { color: var(--red); }
+.check-text { font-family: monospace; font-size: 15px; }
+.check-text.ng { color: var(--red); }
+.check-reason { color: var(--gray); font-size: 13px; margin-top: 3px; margin-left: 28px; font-style: italic; display: block; width: 100%; }
+.example-box { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.example-label { font-weight: 700; font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.example-line { font-family: monospace; font-size: 14px; margin: 3px 0; }
+.example-line.en { color: var(--lgray); font-size: 12px; font-style: italic; font-family: Arial, sans-serif; }
+.note { border-left: 4px solid var(--black); padding: 10px 14px; margin: 14px 0; font-size: 13px; }
+.note-label { font-weight: 700; margin-bottom: 6px; }
+.note ul { padding-left: 16px; }
+.note li { margin: 4px 0; }
+.note .ja { color: var(--gray); font-size: 12px; }
+.summary-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.summary-table th, .summary-table td { border: 1px solid var(--border); padding: 7px 10px; vertical-align: top; }
+.summary-table th { font-weight: 700; background: #fafafa; }
+.step-box { margin: 12px 0; }
+.step-row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; }
+.step-num { background: var(--black); color: var(--white); font-size: 12px; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content { flex: 1; }
+.step-content .ja { color: var(--gray); font-size: 12px; margin-top: 2px; }
+.try-box { background: var(--try-bg); border: 2px solid var(--try-border); border-radius: 4px; padding: 14px 16px; margin: 14px 0; }
+.try-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; color: var(--try-border); margin-bottom: 10px; }
+.try-prompt { font-size: 14px; margin: 6px 0; }
+.try-prompt .ja { color: var(--gray); font-size: 12px; }
+.try-line { font-family: monospace; font-size: 15px; margin: 8px 0 20px; padding-bottom: 32px; color: var(--lgray); }
+.transform { display: flex; align-items: center; gap: 6px; margin: 10px 0 4px; flex-wrap: wrap; line-height: 2.2; }
+.t-base { font-family: monospace; font-size: 17px; white-space: nowrap; }
+.t-del  { font-family: monospace; font-size: 17px; color: var(--red); text-decoration: line-through; white-space: nowrap; }
+.t-add  { font-family: monospace; font-size: 17px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
+.t-plus  { font-size: 15px; color: var(--gray); }
+.t-arrow { font-size: 15px; color: var(--gray); }
+.t-roma  { font-size: 11px; color: var(--gray); display: block; margin: 0 0 8px; font-style: italic; }
+.exception-box { border: 2px solid #e67e22; border-radius: 4px; padding: 12px 16px; margin: 10px 0; background: var(--yellow); font-size: 13px; }
+.exception-label { font-weight: 700; color: #e67e22; margin-bottom: 6px; }
+/* だけ vs しか 比較テーブル */
+.compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+.compare-table th, .compare-table td { border: 1px solid var(--border); padding: 8px 12px; vertical-align: top; }
+.compare-table th { background: #fafafa; font-weight: 700; text-align: center; }
+.compare-table td:first-child { font-family: monospace; font-size: 15px; font-weight: 700; text-align: center; white-space: nowrap; }
+/* 語順図 */
+.order-box { background: #fafafa; border: 1px solid var(--border); border-radius: 4px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+.order-label { font-size: 11px; font-weight: 700; color: var(--lgray); letter-spacing: 1px; margin-bottom: 8px; }
+.order-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: monospace; font-size: 14px; margin: 6px 0; line-height: 2; }
+.order-box-en { background: #eef6ff; border: 1px solid #90b8d8; border-radius: 3px; padding: 2px 8px; }
+.order-box-ja { background: #fff0f0; border: 1px solid #e09090; border-radius: 3px; padding: 2px 8px; }
+.order-reason { background: #e8f5e9; border: 1px solid #81c784; border-radius: 3px; padding: 2px 8px; color: #2e7d32; font-weight: 700; }
+.order-result { background: #fff8e1; border: 1px solid #ffd54f; border-radius: 3px; padding: 2px 8px; color: #e65100; font-weight: 700; }
+.order-kara { font-size: 16px; font-weight: 700; color: var(--red); }
+ruby rt { font-size: 10px; color: var(--lgray); }
+@media print {
+  nav { display: none !important; }
+  body { background: #fff; font-size: 13px; }
+  .page { max-width: 100%; padding: 0; }
+  .section { border: 1px solid #999; margin: 10px 0; page-break-inside: avoid; }
+  .check-text.ng { color: #000; text-decoration: line-through; }
+  .check-mark.ng { color: #000; }
+  a { color: #000; text-decoration: none; }
+  .try-box { background: #fff; border: 1px solid #555; }
+  .try-line { padding-bottom: 32px; margin-bottom: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="title-bar">
+  <div class="page">
+    <h1>JLPT N5 <span>Japanese Lesson Guide</span></h1>
+    <div class="sub">19<ruby>回目<rt>かいめ</rt></ruby></div>
+    <div class="toc">
+      1. 〜に…かい &nbsp;|&nbsp;
+      2. 〜だけ &nbsp;|&nbsp;
+      3. 〜しか…ません &nbsp;|&nbsp;
+      4. 〜で［<ruby>範囲<rt>はんい</rt></ruby>］ &nbsp;|&nbsp;
+      5. どうして〜か／…から〜
+    </div>
+  </div>
+</div>
+
+<nav>
+  <a href="#s1">1. 〜に…かい Frequency</a>
+  <a href="#s2">2. 〜だけ Only</a>
+  <a href="#s3">3. 〜しか…ません Only (limited)</a>
+  <a href="#s4">4. 〜で［<ruby>範囲<rt>はんい</rt></ruby>］ Range</a>
+  <a href="#s5">5. どうして／から Why / Because</a>
+  <a href="#summary">まとめ Summary</a>
+</nav>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1: 〜に…かい
+══════════════════════════════════════════ -->
+<div class="section" id="s1">
+  <div class="section-header">
+    1. 〜に…かい
+    <span class="ja">Frequency — how many times per period</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">INTRO EXAMPLES → まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</div>
+      <div class="intro-line"><ruby>月<rt>つき</rt></ruby>に 1かい テストが あります。</div>
+      <div class="intro-en">There is a test once a month. （月 = month, 1かい = 1 time）</div>
+      <div class="intro-line">1<ruby>日<rt>にち</rt></ruby>に 3かい ごはんを <ruby>食<rt>た</rt></ruby>べます。</div>
+      <div class="intro-en">I eat meals 3 times a day. （1日 = one day, 3かい = 3 times）</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>Use this to say <strong>how often</strong> something happens within a certain time period.</p>
+      <div class="ja">→ ある<ruby>期間<rt>きかん</rt></ruby>に<ruby>何回<rt>なんかい</rt></ruby>〜するかを<ruby>言<rt>い</rt></ruby>うときに<ruby>使<rt>つか</rt></ruby>います。（How many times ~ within a period.）</div>
+      <p style="margin-top:8px;">「に」marks the time period. 「かい」means "times" (number of occurrences).</p>
+      <div class="ja">→「に」は<ruby>期間<rt>きかん</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>します。「かい」は<ruby>回数<rt>かいすう</rt></ruby>（〜<ruby>回<rt>かい</rt></ruby>）を<ruby>表<rt>あらわ</rt></ruby>します。（に = per period; かい = number of times.）</div>
+    </div>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div><ruby>時間<rt>じかん</rt></ruby><ruby>表現<rt>ひょうげん</rt></ruby> ＋ <strong>に</strong> ＋ ［<ruby>数字<rt>すうじ</rt></ruby>］ ＋ <strong>かい</strong> ＋ V</div>
+    </div>
+    <div class="legend">V = verb（<ruby>動詞<rt>どうし</rt></ruby>）</div>
+
+    <!-- 時間表現一覧 -->
+    <h2><ruby>時間表現<rt>じかんひょうげん</rt></ruby> <span class="ja">Time period expressions</span></h2>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th><ruby>期間<rt>きかん</rt></ruby> Period</th>
+          <th><ruby>表現<rt>ひょうげん</rt></ruby> Expression</th>
+          <th><ruby>例<rt>れい</rt></ruby> Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>day / <ruby>日<rt>ひ</rt></ruby></td>
+          <td style="font-family:monospace;"><ruby>日<rt>ひ</rt></ruby>に &nbsp;/&nbsp; 1<ruby>日<rt>にち</rt></ruby>に</td>
+          <td><ruby>日<rt>ひ</rt></ruby>に3かい — 3 times a day<br><span style="color:var(--lgray);font-size:11px;">1<ruby>日<rt>にち</rt></ruby>に3かい でも OK</span></td>
+        </tr>
+        <tr>
+          <td>week / <ruby>週<rt>しゅう</rt></ruby></td>
+          <td style="font-family:monospace;"><ruby>週<rt>しゅう</rt></ruby>に &nbsp;/&nbsp; 1<ruby>週間<rt>しゅうかん</rt></ruby>に</td>
+          <td><ruby>週<rt>しゅう</rt></ruby>に2かい — 2 times a week</td>
+        </tr>
+        <tr>
+          <td>month / <ruby>月<rt>つき</rt></ruby></td>
+          <td style="font-family:monospace;"><ruby>月<rt>つき</rt></ruby>に &nbsp;/&nbsp; 1か<ruby>月<rt>げつ</rt></ruby>に</td>
+          <td><ruby>月<rt>つき</rt></ruby>に1かい — once a month</td>
+        </tr>
+        <tr>
+          <td>year / <ruby>年<rt>ねん</rt></ruby></td>
+          <td style="font-family:monospace;"><ruby>年<rt>ねん</rt></ruby>に &nbsp;/&nbsp; 1<ruby>年<rt>ねん</rt></ruby>に</td>
+          <td><ruby>年<rt>ねん</rt></ruby>に1かい — once a year</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>月<rt>つき</rt></ruby><strong>に</strong> 2かい えいがを <ruby>見<rt>み</rt></ruby>ます。</span>
+        <span class="check-reason">Time period 「<ruby>月<rt>つき</rt></ruby>」＋「に」＋ number 「2かい」— correct frequency expression.
+          <span style="color:var(--lgray);font-size:11px;">→ <ruby>期間<rt>きかん</rt></ruby>「<ruby>月<rt>つき</rt></ruby>」＋「に」＋<ruby>回数<rt>かいすう</rt></ruby>「2かい」の<ruby>順番<rt>じゅんばん</rt></ruby>。（I watch movies twice a month.）</span>
+        </span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>月<rt>つき</rt></ruby> 2かい えいがを <ruby>見<rt>み</rt></ruby>ます。</span>
+        <span class="check-reason" style="color:var(--red);">「に」is missing. Without 「に」, the time period is not marked correctly.
+          <span style="color:var(--lgray);font-size:11px;">→「に」が<ruby>必要<rt>ひつよう</rt></ruby>です。「に」がないと<ruby>期間<rt>きかん</rt></ruby>が<ruby>正しく<rt>ただしく</rt></ruby><ruby>示<rt>しめ</rt></ruby>せません。</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">例1 EXAMPLE 1</div>
+      <div class="example-line"><ruby>月<rt>つき</rt></ruby>に 1かい テストが あります。</div>
+      <div class="example-line en">There is a test once a month.</div>
+      <div class="example-label" style="margin-top:12px;">例2 EXAMPLE 2</div>
+      <div class="example-line">1<ruby>日<rt>にち</rt></ruby>に 3かい ごはんを <ruby>食<rt>た</rt></ruby>べます。</div>
+      <div class="example-line en">I eat meals 3 times a day.</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">How often do you do something? Use 〜に…かい.
+        <div class="ja">→「〜に…かい」を<ruby>使<rt>つか</rt></ruby>って、どのくらいの<ruby>頻度<rt>ひんど</rt></ruby>で〜するか<ruby>書<rt>か</rt></ruby>いてみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿に ＿＿かい ＿＿＿＿＿＿＿＿＿。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2: 〜だけ
+══════════════════════════════════════════ -->
+<div class="section" id="s2">
+  <div class="section-header">
+    2. 〜だけ
+    <span class="ja">Only — neutral limitation</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">INTRO EXAMPLES → まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</div>
+      <div class="intro-line"><ruby>田中<rt>たなか</rt></ruby>さん<span style="color:var(--red);font-weight:700;">だけ</span> にくを <ruby>食<rt>た</rt></ruby>べませんでした。</div>
+      <div class="intro-en">Only Tanaka-san did not eat meat. （neutral statement of fact）</div>
+      <div class="intro-line">れいぞうこに ケーキが <ruby>一<rt>ひと</rt></ruby>つ<span style="color:var(--red);font-weight:700;">だけ</span> あります。</div>
+      <div class="intro-en">There is only one cake in the refrigerator. （just one — no special feeling）</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>Use 「だけ」 to say <strong>"only"</strong> — it limits the range or quantity to just that one thing. This is a <strong>neutral</strong> statement (just a fact, no special feeling about whether it is enough or not).</p>
+      <div class="ja">→「だけ」は<ruby>範囲<rt>はんい</rt></ruby>や<ruby>数量<rt>すうりょう</rt></ruby>を「それだけ」に<ruby>限定<rt>げんてい</rt></ruby>します。<ruby>感情的<rt>かんじょうてき</rt></ruby>なニュアンスはなく、<ruby>中立的<rt>ちゅうりつてき</rt></ruby>な<ruby>事実<rt>じじつ</rt></ruby>を<ruby>述<rt>の</rt></ruby>べます。（"Only" — neutral fact, no feeling of not enough.）</div>
+      <p style="margin-top:8px;">Place 「だけ」 <strong>directly after</strong> the noun or number word. It can be used with positive or negative sentences.</p>
+      <div class="ja">→「だけ」は<ruby>名詞<rt>めいし</rt></ruby>や<ruby>数量詞<rt>すうりょうし</rt></ruby>の<ruby>直後<rt>ちょくご</rt></ruby>につけます。<ruby>肯定文<rt>こうていぶん</rt></ruby>でも<ruby>否定文<rt>ひていぶん</rt></ruby>でも<ruby>使<rt>つか</rt></ruby>えます。（Place だけ right after the noun or number. OK with positive or negative verbs.）</div>
+    </div>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>N ＋ <strong>だけ</strong> ＋ V（<ruby>肯定<rt>こうてい</rt></ruby>・<ruby>否定<rt>ひてい</rt></ruby> OK）</div>
+      <div>［<ruby>数量詞<rt>すうりょうし</rt></ruby>］ ＋ <strong>だけ</strong> ＋ V</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　<ruby>数量詞<rt>すうりょうし</rt></ruby> = number + counter（e.g. <ruby>一<rt>ひと</rt></ruby>つ、3まい、2ほん）</div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">れいぞうこに ケーキが <ruby>一<rt>ひと</rt></ruby>つ<strong>だけ</strong> あります。</span>
+        <span class="check-reason">Number word 「<ruby>一<rt>ひと</rt></ruby>つ」＋「だけ」— neutral "only one". Correct.
+          <span style="color:var(--lgray);font-size:11px;">→ <ruby>数量詞<rt>すうりょうし</rt></ruby>「<ruby>一<rt>ひと</rt></ruby>つ」の<ruby>直後<rt>ちょくご</rt></ruby>に「だけ」をつけます。（There is only one cake in the refrigerator.）</span>
+        </span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">れいぞうこに ケーキが <span style="color:var(--red);">だけ<ruby>一<rt>ひと</rt></ruby>つ</span> あります。</span>
+        <span class="check-reason" style="color:var(--red);">「だけ」must come directly <em>after</em> the word it limits — not before.
+          <span style="color:var(--lgray);font-size:11px;">→「だけ」は<ruby>限定<rt>げんてい</rt></ruby>する<ruby>語<rt>ご</rt></ruby>の<ruby>後<rt>うし</rt></ruby>ろにつけます。<ruby>前<rt>まえ</rt></ruby>ではありません。</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">例1 EXAMPLE 1 — N ＋ だけ</div>
+      <div class="example-line"><ruby>田中<rt>たなか</rt></ruby>さんだけ にくを <ruby>食<rt>た</rt></ruby>べませんでした。</div>
+      <div class="example-line en">Only Tanaka-san did not eat meat.</div>
+      <div class="example-label" style="margin-top:12px;">例2 EXAMPLE 2 — <ruby>数量詞<rt>すうりょうし</rt></ruby> ＋ だけ</div>
+      <div class="example-line">れいぞうこに ケーキが <ruby>一<rt>ひと</rt></ruby>つだけ あります。</div>
+      <div class="example-line en">There is only one cake in the refrigerator.</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Use 〜だけ to say "only ~".
+        <div class="ja">→「〜だけ」を<ruby>使<rt>つか</rt></ruby>って「〜だけ」の<ruby>文<rt>ぶん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>りましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿＿だけ ＿＿＿＿＿＿＿＿＿。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3: 〜しか…ません
+══════════════════════════════════════════ -->
+<div class="section" id="s3">
+  <div class="section-header">
+    3. 〜しか…ません
+    <span class="ja">Only — with the feeling of "not enough"</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">INTRO EXAMPLES → まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</div>
+      <div class="intro-line"><ruby>私<rt>わたし</rt></ruby>は ひらがな<span style="color:var(--red);font-weight:700;">しか</span> わかり<span style="color:var(--red);font-weight:700;">ません</span>。</div>
+      <div class="intro-en">I only know hiragana. （feeling: I wish I knew more — it's not enough）</div>
+      <div class="intro-line">さいふの <ruby>中<rt>なか</rt></ruby>に 10<ruby>円<rt>えん</rt></ruby><span style="color:var(--red);font-weight:700;">しか</span> あり<span style="color:var(--red);font-weight:700;">ません</span>。</div>
+      <div class="intro-en">I only have 10 yen in my wallet. （feeling: that's very little — not enough!）</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>Use 「しか」 to say <strong>"only"</strong> — but it carries a feeling that the amount is <strong>small, limited, or not enough</strong>. It is stronger and more emotional than 「だけ」.</p>
+      <div class="ja">→「しか」も「only」という<ruby>意味<rt>いみ</rt></ruby>ですが、<ruby>量<rt>りょう</rt></ruby>が<ruby>少<rt>すく</rt></ruby>ない・<ruby>足<rt>た</rt></ruby>りない・<ruby>残念<rt>ざんねん</rt></ruby>というニュアンスが<ruby>含<rt>ふく</rt></ruby>まれます。「だけ」よりも<ruby>気持<rt>きも</rt></ruby>ちが<ruby>強<rt>つよ</rt></ruby>く<ruby>出<rt>で</rt></ruby>ます。（"Only" with the nuance of not enough / surprisingly little.）</div>
+      <p style="margin-top:8px;"><strong>Important:</strong> 「しか」 <strong>must always</strong> be used with a <strong>negative verb</strong> （〜ません／〜ませんでした）.</p>
+      <div class="ja">→「しか」は<ruby>必<rt>かなら</rt></ruby>ず<ruby>否定形<rt>ひていけい</rt></ruby>（〜ません／〜ませんでした）と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>使<rt>つか</rt></ruby>います。（Must always use with a negative verb.）</div>
+    </div>
+
+    <!-- だけ vs しか 比較表 -->
+    <h2>だけ vs しか <span class="ja"><ruby>違<rt>ちが</rt></ruby>いの<ruby>比較<rt>ひかく</rt></ruby></span></h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th><ruby>表現<rt>ひょうげん</rt></ruby></th>
+          <th><ruby>動詞<rt>どうし</rt></ruby> Verb</th>
+          <th>Nuance</th>
+          <th><ruby>例<rt>れい</rt></ruby></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>〜<strong>だけ</strong></td>
+          <td><ruby>肯定<rt>こうてい</rt></ruby>・<ruby>否定<rt>ひてい</rt></ruby> どちらも OK</td>
+          <td>Neutral "only" — just a fact.<br><span style="color:var(--lgray);font-size:11px;"><ruby>中立的<rt>ちゅうりつてき</rt></ruby>。<ruby>感情<rt>かんじょう</rt></ruby>なし。</span></td>
+          <td style="font-family:monospace;font-size:13px;">ケーキが <ruby>一<rt>ひと</rt></ruby>つ<strong>だけ</strong> あります。<br><span style="color:var(--lgray);font-size:11px;">There is only one cake.</span></td>
+        </tr>
+        <tr>
+          <td>〜<strong>しか</strong>…ません</td>
+          <td><ruby>否定形<rt>ひていけい</rt></ruby> <strong>のみ</strong></td>
+          <td>"Only" with the feeling of "not enough / surprisingly little".<br><span style="color:var(--lgray);font-size:11px;"><ruby>少<rt>すく</rt></ruby>ない・<ruby>足<rt>た</rt></ruby>りない<ruby>気持<rt>きも</rt></ruby>ち。</span></td>
+          <td style="font-family:monospace;font-size:13px;">ケーキが <ruby>一<rt>ひと</rt></ruby>つ<strong>しか</strong> あり<strong>ません</strong>。<br><span style="color:var(--lgray);font-size:11px;">There is only one cake. （that's not enough!）</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>N ＋ <strong>しか</strong> ＋ Vます<ruby>形<rt>けい</rt></ruby> ＋ <strong>ません（でした）</strong></div>
+      <div>［<ruby>数量詞<rt>すうりょうし</rt></ruby>］ ＋ <strong>しか</strong> ＋ Vます<ruby>形<rt>けい</rt></ruby> ＋ <strong>ません（でした）</strong></div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　V = verb（<ruby>動詞<rt>どうし</rt></ruby>）</div>
+
+    <!-- 注意ボックス -->
+    <div class="exception-box">
+      <div class="exception-label">⚠️ Important! <ruby>注意<rt>ちゅうい</rt></ruby></div>
+      <p>「しか」must <strong>always</strong> be followed by a negative verb.</p>
+      <p style="margin-top:4px; color:var(--gray);font-size:12px;">→「しか」の<ruby>後<rt>あと</rt></ruby>は<ruby>必<rt>かなら</rt></ruby>ず<ruby>否定形<rt>ひていけい</rt></ruby>です。</p>
+      <p style="margin-top:8px;font-family:monospace;">10<ruby>円<rt>えん</rt></ruby>しか <span style="color:var(--red);">あります</span>。← ✗ &nbsp;/&nbsp; 10<ruby>円<rt>えん</rt></ruby>しか <strong>ありません</strong>。← ○</p>
+    </div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">さいふの <ruby>中<rt>なか</rt></ruby>に 10<ruby>円<rt>えん</rt></ruby>しか あり<strong>ません</strong>。</span>
+        <span class="check-reason">「しか」＋ negative verb 「ありません」— correct. Nuance: 10 yen is very little / not enough.
+          <span style="color:var(--lgray);font-size:11px;">→「しか」の<ruby>後<rt>あと</rt></ruby>に<ruby>否定形<rt>ひていけい</rt></ruby>「ありません」をつけます。（I only have 10 yen in my wallet.）</span>
+        </span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">さいふの <ruby>中<rt>なか</rt></ruby>に 10<ruby>円<rt>えん</rt></ruby>しか <span style="color:var(--red);">あります</span>。</span>
+        <span class="check-reason" style="color:var(--red);">「しか」must be followed by a negative verb. 「あります」is positive — wrong.
+          <span style="color:var(--lgray);font-size:11px;">→「しか」は<ruby>肯定形<rt>こうていけい</rt></ruby>とは<ruby>使<rt>つか</rt></ruby>えません。「ありません」が<ruby>必要<rt>ひつよう</rt></ruby>です。</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">例1 EXAMPLE 1 — N ＋ しか</div>
+      <div class="example-line"><ruby>私<rt>わたし</rt></ruby>は ひらがなしか わかりません。</div>
+      <div class="example-line en">I only know hiragana. （I wish I knew more.）</div>
+      <div class="example-label" style="margin-top:12px;">例2 EXAMPLE 2 — <ruby>数量詞<rt>すうりょうし</rt></ruby> ＋ しか</div>
+      <div class="example-line">さいふの <ruby>中<rt>なか</rt></ruby>に 10<ruby>円<rt>えん</rt></ruby>しか ありません。</div>
+      <div class="example-line en">I only have 10 yen in my wallet. （That's very little!）</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Use 〜しか…ません to say something with the feeling of "not enough".
+        <div class="ja">→「〜しか…ません」を<ruby>使<rt>つか</rt></ruby>って「<ruby>少<rt>すく</rt></ruby>ない・<ruby>足<rt>た</rt></ruby>りない」ニュアンスの<ruby>文<rt>ぶん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>りましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿しか ＿＿＿＿＿ません。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4: 〜で [範囲]
+══════════════════════════════════════════ -->
+<div class="section" id="s4">
+  <div class="section-header">
+    4. 〜で ［<ruby>範囲<rt>はんい</rt></ruby>］
+    <span class="ja">Range — total quantity or price</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">INTRO EXAMPLES → まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</div>
+      <div class="intro-line">この チョコレートは <ruby>三<rt>みっ</rt></ruby>つ<span style="color:var(--red);font-weight:700;">で</span> 400<ruby>円<rt>えん</rt></ruby>です。</div>
+      <div class="intro-en">These chocolates are 400 yen for three. （三つで = for 3 / as a set of 3）</div>
+      <div class="intro-line">きのう <ruby>二人<rt>ふたり</rt></ruby><span style="color:var(--red);font-weight:700;">で</span> きょうしつの そうじを しました。</div>
+      <div class="intro-en">Yesterday, two people cleaned the classroom together. （二人で = with 2 people / as 2）</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>Use 「で」 after a number word to show the <strong>total range or quantity</strong> — "as a set of ~", "in total ~", "for ~ (price)".</p>
+      <div class="ja">→ <ruby>数量詞<rt>すうりょうし</rt></ruby>の<ruby>後<rt>あと</rt></ruby>に「で」をつけて、<ruby>合計<rt>ごうけい</rt></ruby>・<ruby>範囲<rt>はんい</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>します。「〜で…<ruby>円<rt>えん</rt></ruby>」は<ruby>値段<rt>ねだん</rt></ruby>の<ruby>合計<rt>ごうけい</rt></ruby>を<ruby>表<rt>あらわ</rt></ruby>すときによく<ruby>使<rt>つか</rt></ruby>います。（で after a number = "as a set of ~" / total price.）</div>
+      <p style="margin-top:8px;">This is a new use of 「で」 — different from the "place of action" で (e.g. <ruby>図書館<rt>としょかん</rt></ruby>で べんきょうします).</p>
+      <div class="ja">→ これは「<ruby>場所<rt>ばしょ</rt></ruby>で」（<ruby>行為<rt>こうい</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>）とは<ruby>違<rt>ちが</rt></ruby>う「で」の<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>です。（Different from the で that marks place of action.）</div>
+    </div>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>［<ruby>数量詞<rt>すうりょうし</rt></ruby>］ ＋ <strong>で</strong> ＋ …</div>
+    </div>
+    <div class="legend"><ruby>数量詞<rt>すうりょうし</rt></ruby> = number + counter（e.g. <ruby>三<rt>みっ</rt></ruby>つ、<ruby>二人<rt>ふたり</rt></ruby>、5まい）</div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">この チョコレートは <ruby>三<rt>みっ</rt></ruby>つ<strong>で</strong> 400<ruby>円<rt>えん</rt></ruby>です。</span>
+        <span class="check-reason">「<ruby>三<rt>みっ</rt></ruby>つで」shows the total range — 3 chocolates as a set for 400 yen. Correct.
+          <span style="color:var(--lgray);font-size:11px;">→「<ruby>三<rt>みっ</rt></ruby>つで」で「3つで400<ruby>円<rt>えん</rt></ruby>（<ruby>合計<rt>ごうけい</rt></ruby>）」を<ruby>表<rt>あらわ</rt></ruby>します。（These chocolates are 400 yen for three.）</span>
+        </span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">この チョコレートは <ruby>三<rt>みっ</rt></ruby>つ<span style="color:var(--red);">が</span> 400<ruby>円<rt>えん</rt></ruby>です。</span>
+        <span class="check-reason" style="color:var(--red);">「が」marks a subject, not a range/set. Use 「で」to express "for three / as a set of three".
+          <span style="color:var(--lgray);font-size:11px;">→「が」は<ruby>主語<rt>しゅご</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>します。<ruby>範囲<rt>はんい</rt></ruby>・<ruby>合計<rt>ごうけい</rt></ruby>を<ruby>表<rt>あらわ</rt></ruby>すには「で」を<ruby>使<rt>つか</rt></ruby>います。</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">例1 EXAMPLE 1 — <ruby>値段<rt>ねだん</rt></ruby> Price / quantity</div>
+      <div class="example-line">この チョコレートは <ruby>三<rt>みっ</rt></ruby>つで 400<ruby>円<rt>えん</rt></ruby>です。</div>
+      <div class="example-line en">These chocolates are 400 yen for three.</div>
+      <div class="example-label" style="margin-top:12px;">例2 EXAMPLE 2 — <ruby>人数<rt>にんずう</rt></ruby> Number of people</div>
+      <div class="example-line">きのう <ruby>二人<rt>ふたり</rt></ruby>で きょうしつの そうじを しました。</div>
+      <div class="example-line en">Yesterday, two people cleaned the classroom together.</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Use 〜で to express a total price or number of people.
+        <div class="ja">→「〜で」を<ruby>使<rt>つか</rt></ruby>って<ruby>合計<rt>ごうけい</rt></ruby>の<ruby>値段<rt>ねだん</rt></ruby>や<ruby>人数<rt>にんずう</rt></ruby>を<ruby>表現<rt>ひょうげん</rt></ruby>してみましょう。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿で ＿＿＿＿＿＿＿＿＿。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 5: どうして〜か／…から〜
+══════════════════════════════════════════ -->
+<div class="section" id="s5">
+  <div class="section-header">
+    5. どうして〜か／…から〜
+    <span class="ja">Why ~ / Because … — asking and giving reasons</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 導入例文 -->
+    <div class="intro-example">
+      <div class="intro-label">INTRO EXAMPLES → まず<ruby>例文<rt>れいぶん</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみましょう。</div>
+      <div class="intro-line">A：「<span style="color:var(--red);font-weight:700;">どうして</span> きのう <ruby>休<rt>やす</rt></ruby>みましたか。」</div>
+      <div class="intro-en">A: "Why were you absent yesterday?"</div>
+      <div class="intro-line">B：「あたまが いたかったです<span style="color:var(--red);font-weight:700;">から</span>、<ruby>休<rt>やす</rt></ruby>みました。」</div>
+      <div class="intro-en">B: "Because I had a headache, I was absent."</div>
+    </div>
+
+    <!-- ロジックボックス -->
+    <div class="logic-box">
+      <p>「どうして」 is a question word meaning <strong>"Why ~?"</strong> — use it to ask for a reason.</p>
+      <div class="ja">→「どうして」は<ruby>理由<rt>りゆう</rt></ruby>を<ruby>聞<rt>き</rt></ruby>く<ruby>疑問詞<rt>ぎもんし</rt></ruby>です。（"Why" — asks for a reason.）</div>
+      <p style="margin-top:8px;">To answer, use 「…から〜」 or 「…からです」 — meaning <strong>"Because …"</strong>. The reason comes <strong>before</strong> 「から」.</p>
+      <div class="ja">→ <ruby>答<rt>こた</rt></ruby>えるときは「…から〜」または「…からです」を<ruby>使<rt>つか</rt></ruby>います。「から」の<ruby>前<rt>まえ</rt></ruby>が<ruby>理由<rt>りゆう</rt></ruby>です。（Answer with "…から" — the reason comes before から.）</div>
+      <p style="margin-top:8px;">You can use either polite form (ていねい<ruby>形<rt>けい</rt></ruby>) or plain form (ふつう<ruby>形<rt>けい</rt></ruby>) before 「から」.</p>
+      <div class="ja">→「から」の<ruby>前<rt>まえ</rt></ruby>は、ていねい<ruby>形<rt>けい</rt></ruby>でもふつう<ruby>形<rt>けい</rt></ruby>でも<ruby>使<rt>つか</rt></ruby>えます。（Both polite and plain form are OK before から.）</div>
+    </div>
+
+    <!-- 語順図 -->
+    <h2><ruby>語順<rt>ごじゅん</rt></ruby> <span class="ja">Word order — Japan vs English</span></h2>
+
+    <div class="order-box">
+      <div class="order-label">ENGLISH ORDER</div>
+      <div class="order-row">
+        <span style="font-style:italic;color:var(--lgray);">Because</span>
+        <span class="order-box-en"><ruby>理由<rt>りゆう</rt></ruby> Reason</span>
+        <span class="t-arrow">→</span>
+        <span class="order-box-en"><ruby>結果<rt>けっか</rt></ruby> Result</span>
+      </div>
+      <div style="color:var(--lgray);font-size:12px;font-style:italic;margin-top:4px;">"Because I was tired, I slept."</div>
+    </div>
+
+    <div class="order-box" style="margin-top:8px;">
+      <div class="order-label">JAPANESE ORDER ← <ruby>逆順<rt>ぎゃくじゅん</rt></ruby>！ Reversed!</div>
+      <div class="order-row">
+        <span class="order-reason"><ruby>理由<rt>りゆう</rt></ruby> Reason</span>
+        <span class="order-kara">から</span>
+        <span class="t-arrow">→</span>
+        <span class="order-result"><ruby>結果<rt>けっか</rt></ruby> Result</span>
+      </div>
+      <div style="color:var(--lgray);font-size:12px;font-style:italic;margin-top:4px;">「つかれていたから、ねました。」— reason comes FIRST, then から, then result.</div>
+    </div>
+
+    <!-- 構造式 -->
+    <div class="structure">
+      <div>どうして 〜か。</div>
+      <div style="margin-top:6px;">…（<ruby>理由<rt>りゆう</rt></ruby>）＋ <strong>から</strong>、〜（<ruby>結果<rt>けっか</rt></ruby>）。</div>
+      <div>…（<ruby>理由<rt>りゆう</rt></ruby>）＋ <strong>からです</strong>。（<ruby>理由<rt>りゆう</rt></ruby>だけを<ruby>言<rt>い</rt></ruby>うとき）</div>
+    </div>
+    <div class="legend">ていねい<ruby>形<rt>けい</rt></ruby>・ふつう<ruby>形<rt>けい</rt></ruby> どちらも から の<ruby>前<rt>まえ</rt></ruby>に<ruby>使<rt>つか</rt></ruby>えます。</div>
+
+    <!-- ○/× -->
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">あたまが いたかったです<strong>から</strong>、<ruby>休<rt>やす</rt></ruby>みました。</span>
+        <span class="check-reason">Reason 「あたまが いたかったです」＋「から」＋ result 「<ruby>休<rt>やす</rt></ruby>みました」— correct order.
+          <span style="color:var(--lgray);font-size:11px;">→ <ruby>理由<rt>りゆう</rt></ruby>＋から＋<ruby>結果<rt>けっか</rt></ruby>の<ruby>順番<rt>じゅんばん</rt></ruby>。（Because I had a headache, I was absent.）</span>
+        </span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>休<rt>やす</rt></ruby>みました、<span style="color:var(--red);">から</span> あたまが いたかったです。</span>
+        <span class="check-reason" style="color:var(--red);">Wrong order — in Japanese, the reason must come FIRST, before 「から」. Result comes after.
+          <span style="color:var(--lgray);font-size:11px;">→ <ruby>日本語<rt>にほんご</rt></ruby>では<ruby>理由<rt>りゆう</rt></ruby>が<ruby>先<rt>さき</rt></ruby>です。「から」の<ruby>後<rt>あと</rt></ruby>に<ruby>結果<rt>けっか</rt></ruby>が<ruby>来<rt>き</rt></ruby>ます。</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Example -->
+    <div class="example-box">
+      <div class="example-label">例1 EXAMPLE 1 — Q &amp; A with どうして</div>
+      <div class="example-line">A：「Bさん、どうして きのう <ruby>休<rt>やす</rt></ruby>みましたか。」</div>
+      <div class="example-line en">A: "B-san, why were you absent yesterday?"</div>
+      <div class="example-line">B：「あたまが いたかったですから、<ruby>休<rt>やす</rt></ruby>みました。」</div>
+      <div class="example-line en">B: "Because I had a headache, I was absent."</div>
+      <div class="example-line">　　／ あたまが いたかったからです。</div>
+      <div class="example-line en">　　／ "It's because I had a headache."（reason only）</div>
+      <div class="example-label" style="margin-top:12px;">例2 EXAMPLE 2 — Giving a reason with から</div>
+      <div class="example-line">あした テストが あるから、<ruby>今日<rt>きょう</rt></ruby> べんきょうします。</div>
+      <div class="example-line en">Because there is a test tomorrow, I will study today.</div>
+    </div>
+
+    <!-- TRY IT -->
+    <div class="try-box">
+      <div class="try-label">✏️ TRY IT! <ruby>自分<rt>じぶん</rt></ruby>で<ruby>書<rt>か</rt></ruby>いてみよう</div>
+      <div class="try-prompt">Give a reason using …から〜. Remember: reason FIRST, then から, then result.
+        <div class="ja">→「…から〜」を<ruby>使<rt>つか</rt></ruby>って<ruby>理由<rt>りゆう</rt></ruby>を<ruby>言<rt>い</rt></ruby>いましょう。<ruby>理由<rt>りゆう</rt></ruby>が<ruby>先<rt>さき</rt></ruby>、「から」の<ruby>後<rt>あと</rt></ruby>に<ruby>結果<rt>けっか</rt></ruby>です。</div>
+      </div>
+      <div class="try-line">＿＿＿＿＿＿から、＿＿＿＿＿＿＿＿＿。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SUMMARY
+══════════════════════════════════════════ -->
+<div class="section" id="summary">
+  <div class="section-header">
+    まとめ <span class="ja">Summary</span>
+  </div>
+  <div class="section-body">
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th><ruby>項目<rt>こうもく</rt></ruby><br>Item</th>
+          <th><ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby><br>Use</th>
+          <th><ruby>例文<rt>れいぶん</rt></ruby><br>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><ruby>時間<rt>じかん</rt></ruby>＋に＋かい</strong><br><span style="color:var(--lgray);font-size:11px;">Frequency</span></td>
+          <td>How often something happens in a period.<br><span style="color:var(--lgray);font-size:11px;"><ruby>期間<rt>きかん</rt></ruby>に<ruby>何回<rt>なんかい</rt></ruby>〜するか</span></td>
+          <td><ruby>月<rt>つき</rt></ruby>に 2かい えいがを <ruby>見<rt>み</rt></ruby>ます。<br><span style="color:var(--lgray);font-size:11px;">I watch movies twice a month.</span></td>
+        </tr>
+        <tr>
+          <td><strong>〜だけ</strong><br><span style="color:var(--lgray);font-size:11px;">Only (neutral)</span></td>
+          <td>Neutral "only" — just a fact. OK with positive or negative verbs.<br><span style="color:var(--lgray);font-size:11px;"><ruby>中立的<rt>ちゅうりつてき</rt></ruby>な「only」。<ruby>肯定<rt>こうてい</rt></ruby>・<ruby>否定<rt>ひてい</rt></ruby>どちらでも</span></td>
+          <td>ケーキが <ruby>一<rt>ひと</rt></ruby>つだけ あります。<br><span style="color:var(--lgray);font-size:11px;">There is only one cake.</span></td>
+        </tr>
+        <tr>
+          <td><strong>〜しか…ません</strong><br><span style="color:var(--lgray);font-size:11px;">Only (not enough)</span></td>
+          <td>"Only" with the nuance of not enough / surprisingly little. Must use negative verb.<br><span style="color:var(--lgray);font-size:11px;"><ruby>少<rt>すく</rt></ruby>ない・<ruby>足<rt>た</rt></ruby>りない<ruby>気持<rt>きも</rt></ruby>ち。<ruby>必<rt>かなら</rt></ruby>ず<ruby>否定形<rt>ひていけい</rt></ruby>と</span></td>
+          <td>10<ruby>円<rt>えん</rt></ruby>しか ありません。<br><span style="color:var(--lgray);font-size:11px;">I only have 10 yen. (not enough!)</span></td>
+        </tr>
+        <tr>
+          <td><strong>［<ruby>数量詞<rt>すうりょうし</rt></ruby>］＋で</strong><br><span style="color:var(--lgray);font-size:11px;">Range / total</span></td>
+          <td>Total quantity or price — "as a set of ~", "for ~ yen".<br><span style="color:var(--lgray);font-size:11px;"><ruby>合計<rt>ごうけい</rt></ruby>・<ruby>範囲<rt>はんい</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>す</span></td>
+          <td><ruby>三<rt>みっ</rt></ruby>つで 400<ruby>円<rt>えん</rt></ruby>です。<br><span style="color:var(--lgray);font-size:11px;">400 yen for three.</span></td>
+        </tr>
+        <tr>
+          <td><strong>どうして〜か<br>…から〜</strong><br><span style="color:var(--lgray);font-size:11px;">Why / Because</span></td>
+          <td>どうして = "Why?" &nbsp;|&nbsp; から = "Because" (reason comes FIRST).<br><span style="color:var(--lgray);font-size:11px;">どうして＝なぜ　から＝<ruby>理由<rt>りゆう</rt></ruby>（<ruby>先<rt>さき</rt></ruby>に<ruby>来<rt>き</rt></ruby>る）</span></td>
+          <td>あたまが いたかったから、<ruby>休<rt>やす</rt></ruby>みました。<br><span style="color:var(--lgray);font-size:11px;">Because I had a headache, I was absent.</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="note-label">📝 Note — Key Points
+        <span class="ja" style="font-weight:400;"> <ruby>重要<rt>じゅうよう</rt></ruby>ポイント</span>
+      </div>
+      <ul>
+        <li><strong>だけ</strong> (neutral "only") vs <strong>しか…ません</strong> (emotional "only — not enough"). Both mean "only" but しか needs a negative verb and implies disappointment.
+          <div class="ja" style="color:var(--gray);font-size:12px;">→「だけ」は<ruby>中立<rt>ちゅうりつ</rt></ruby>。「しか」は<ruby>少<rt>すく</rt></ruby>ない・<ruby>足<rt>た</rt></ruby>りない<ruby>気持<rt>きも</rt></ruby>ち。「しか」は<ruby>否定形<rt>ひていけい</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>使<rt>つか</rt></ruby>う。</div>
+        </li>
+        <li style="margin-top:8px;">「〜で」（<ruby>範囲<rt>はんい</rt></ruby>）is a new use of で — different from the place-of-action で.
+          <div class="ja" style="color:var(--gray);font-size:12px;">→「〜で（<ruby>範囲<rt>はんい</rt></ruby>）」は<ruby>行為<rt>こうい</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>の「で」とは<ruby>別<rt>べつ</rt></ruby>の<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>です。</div>
+        </li>
+        <li style="margin-top:8px;">「から」（because）— <strong>reason first</strong>, から second, result last. This is the opposite of English word order.
+          <div class="ja" style="color:var(--gray);font-size:12px;">→「から」は<ruby>理由<rt>りゆう</rt></ruby>が<ruby>先<rt>さき</rt></ruby>。<ruby>英語<rt>えいご</rt></ruby>と<ruby>逆<rt>ぎゃく</rt></ruby>の<ruby>語順<rt>ごじゅん</rt></ruby>です。</div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- end .page -->
+</body>
+</html>
